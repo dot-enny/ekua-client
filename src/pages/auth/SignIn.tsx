@@ -10,6 +10,7 @@ export const SignIn = () => {
 	const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
         navigate('/');
+		setIsLoading(true);
 		// const formData = new FormData(e.target as HTMLFormElement);
 		// const { username, email, password } = Object.fromEntries(formData);
 	};

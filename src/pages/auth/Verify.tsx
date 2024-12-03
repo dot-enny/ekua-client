@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Verify = () => {
     const navigate = useNavigate();
@@ -10,6 +10,7 @@ export const Verify = () => {
 	const handleVerify = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
         navigate('/');
+		setIsLoading(true);
 		// const formData = new FormData(e.target as HTMLFormElement);
 		// const { username, email, password } = Object.fromEntries(formData);
 	};
