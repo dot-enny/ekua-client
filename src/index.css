@@ -2,71 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #131313 transparent;
 }
 
 body {
+  background: #F2F2F2;
+  color: #333333;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.auth-form {
+  @apply h-screen flex justify-center items-center;
+
+  >div {
+    @apply grid gap-10 items-center md:w-1/4;
+  }
+
+  h2 {
+    @apply text-xl font-bold mx-auto;
+  }
+
+  form {
+    @apply flex flex-col justify-center gap-5;
+
+    input {
+      @apply py-3 px-4 outline-none border-gray-600 rounded-xl;
+    }
+
+    button {
+      @apply p-3 rounded-xl bg-[#99B8D9] font-semibold mt-4;
+    }
+
+    a {
+      @apply text-sm underline;
+    }
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.auth-form__secondary-cta {
+  @apply text-sm flex justify-between;
+}
+
+.message {
+  @apply max-w-[70%] flex gap-5;
 }
