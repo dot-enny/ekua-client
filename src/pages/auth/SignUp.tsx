@@ -17,14 +17,14 @@ export const SignUp = () => {
 	};
 
 	const signUp = async (userData: { firstname: string; lastname: string; email: string; password: string; confirmPassword: string }) => {
-		const response = await axios.post(`${BASE_URL}auth/register`, userData, {
+		const response = await axios.post(`${BASE_URL}auth/register/`, userData, {
 			headers: {
 				"Content-Type": "application/json",
-				// "Access-Control-Request-Method": "POST",
+				// "Access-Control-Request-Method": "*",
 				// "Origin": "http://localhost:5173",
 				// "Access-Control-Allow-Origin": "*",
 			},
-			// withCredentials: true, // If credentials like cookies are required
+			withCredentials: true, // If credentials like cookies are required
 		}
 		);
 		return response.data;
